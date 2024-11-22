@@ -99,7 +99,6 @@ vim.g.have_nerd_font = false
 -- Make line numbers default
 vim.opt.number = true
 -- You can also add relative line numbers, to help with jumping.
---  Experiment for yourself to see if you like it!
 -- vim.opt.relativenumber = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
@@ -172,8 +171,7 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, {
 })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
--- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
--- is not what someone will guess without a bit more experience.
+-- for people to discover. Otherwise, you normally need to press <C-\><C-n>
 --
 -- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
 -- or just use <C-\><C-n> to exit terminal mode
@@ -394,17 +392,12 @@ require('lazy').setup({ -- NOTE: Plugins can be added with a link (or for a gith
         -- The easiest way to use Telescope, is to start by doing something like:
         --  :Telescope help_tags
         --
-        -- After running this command, a window will open up and you're able to
-        -- type in the prompt window. You'll see a list of `help_tags` options and
-        -- a corresponding preview of the help.
-        --
         -- Two important keymaps to use while in Telescope are:
         --  - Insert mode: <c-/>
         --  - Normal mode: ?
         --
         -- This opens a window that shows you all of the keymaps for the current
-        -- Telescope picker. This is really useful to discover what Telescope can
-        -- do as well as how to actually do it!
+        -- Telescope picker.
 
         -- [[ Configure Telescope ]]
         -- See `:help telescope` and `:help telescope.setup()`
@@ -531,9 +524,7 @@ require('lazy').setup({ -- NOTE: Plugins can be added with a link (or for a gith
         -- and language tooling communicate in a standardized fashion.
         --
         -- In general, you have a "server" which is some tool built to understand a particular
-        -- language (such as `gopls`, `lua_ls`, `rust_analyzer`, etc.). These Language Servers
-        -- (sometimes called LSP servers, but that's kind of like ATM Machine) are standalone
-        -- processes that communicate with some "client" - in this case, Neovim!
+        -- language (such as `gopls`, `lua_ls`, `rust_analyzer`, etc.). 
         --
         -- LSP provides Neovim with features like:
         --  - Go to definition
@@ -545,8 +536,7 @@ require('lazy').setup({ -- NOTE: Plugins can be added with a link (or for a gith
         -- Thus, Language Servers are external tools that must be installed separately from
         -- Neovim. This is where `mason` and related plugins come into play.
         --
-        -- If you're wondering about lsp vs treesitter, you can check out the wonderfully
-        -- and elegantly composed help section, `:help lsp-vs-treesitter`
+        -- If you're wondering about lsp vs treesitter, `:help lsp-vs-treesitter`
 
         --  This function gets run when an LSP attaches to a particular buffer.
         --    That is to say, every time a new file is opened that is associated with
@@ -675,7 +665,6 @@ require('lazy').setup({ -- NOTE: Plugins can be added with a link (or for a gith
         capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
         -- Enable the following language servers
-        --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
         --
         --  Add any additional override configuration in the following tables. Available keys are:
         --  - cmd (table): Override the default command used to start the server
@@ -899,8 +888,7 @@ require('lazy').setup({ -- NOTE: Plugins can be added with a link (or for a gith
             }}
         }
     end
-}, { -- You can easily change to a different colorscheme.
-    -- Change the name of the colorscheme plugin below, and then
+}, {-- Change the name of the colorscheme plugin below, and then
     -- change the command in the config to whatever the name of that colorscheme is.
     --
     -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
